@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Sol_App.Views.MainPage"
+             xmlns:component="clr-namespace:Sol_App.Components"
+             xmlns:VM="clr-namespace:Sol_App.ViewModels"
+             >
+
+    <ContentPage.BindingContext>
+        <VM:UserViewModel></VM:UserViewModel>
+    </ContentPage.BindingContext>
+
+    <Grid BackgroundColor="{Binding UsersUi.IconBackgroundColor}">
+
+        <!--<component:CardViewComponent
+            IconBackgroundColor="SlateGray"
+            CardColor="LightSalmon"
+            BorderColor="DarkGray"
+            CardTitle="Kishor Naik"
+            CardDescription="I am .Net Developer and Solution Architect."
+            IconImageSource="https://ideators.tech/assets/img/team/Kishor-Naik.jpeg"
+            >
+            
+        </component:CardViewComponent>-->
+
+        <component:CardViewComponent
+            IconBackgroundColor="{Binding UsersUi.IconBackgroundColor}"
+             CardColor="{Binding UsersUi.CardColor}"
+             BorderColor="{Binding UsersUi.BorderColor}" 
+             CardTitle="{Binding Users.UserName}"
+             CardDescription="{Binding Users.UserDescription}"
+             IconImageSource="{Binding Users.UserIcon}"
+             ChangeColorCommand="{Binding Submit}"
+            >
+            
+        </component:CardViewComponent>
+        
+    </Grid>
+
+</ContentPage>
